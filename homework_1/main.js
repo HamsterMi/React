@@ -82,7 +82,7 @@ class Manager extends Employee {
     this.developers = [];
   }
   addDeveloper(newDeveloper) {
-    if (!this.developers.some(item => item === newDeveloper)) {
+    if (!this.developers.includes(newDeveloper)) {
       this.developers.push(newDeveloper);
       console.log("сотрудник добавлен");
       return this.developers;
