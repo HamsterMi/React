@@ -5,7 +5,7 @@
 
 "use strict";
 
-let lopp = (times = 0, callback = 0) => {
+let lopp = (times = 0, callback = null) => {
   if (typeof callback === "function") {
     for (let i = 0; i < times; i++) {
       callback();
