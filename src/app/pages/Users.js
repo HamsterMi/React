@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import UsersList from "../components/UsersList";
-
 import { getUsers } from "../actions/actionCreators";
 import UserStore from "../stores/userStore";
 
@@ -10,7 +9,7 @@ export default class Users extends Component {
     this.state = {
       users: []
     };
-    this.onUsersChange = this.onUsersChange.bind(this);
+    this.onUserChange = this.onUserChange.bind(this);
   }
 
   // user() {
@@ -19,7 +18,6 @@ export default class Users extends Component {
   // }
 
   onUserChange() {
-
     const users = UserStore.users;
     this.setState({ users });
   }

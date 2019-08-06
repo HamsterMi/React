@@ -14,13 +14,9 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={Layout}>
       <IndexRoute component={Main} />
-
       <Route path="posts" component={Posts} />
-
       <Route path="comments" component={Comments} />
-
       <Route path="users" component={Users} />
-
       <Route path="*" component={PageNotFound} />
     </Route>
   </Router>,
