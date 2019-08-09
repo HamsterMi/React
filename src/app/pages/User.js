@@ -1,21 +1,17 @@
-import React, { Component } from 'react'
-import UserProfile from '../components/User';
+import React, { Component } from "react";
+import UserProfile from "../components/User";
 import { connect } from "react-redux";
-import { fetchUser } from "../actions/usersAction";
+import { fetchUsers } from "../actions/usersAction";
 
-class User extends React.Component{
-
+class User extends React.Component {
   render() {
     const { user } = this.props;
-    return (
-      <div>
-        {<UserProfile  {...user} />}
-      </div>
-    )
+    return <div>{<UserProfile {...user} />}</div>;
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchUser(this.props.params.userId));
+    this.props.dispatch(fetchUsers(this.props.params.userId));
+    console.log(this.props.params.userId);
   }
 }
 
