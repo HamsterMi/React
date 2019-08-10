@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import User from "./User";
 import { connect } from "react-redux";
 import { fetchUsers } from "../actions/usersAction";
@@ -6,8 +6,6 @@ import { fetchUsers } from "../actions/usersAction";
 class UsersList extends React.Component {
   render() {
     const { users } = this.props;
-    //не понятно, почему такая запись не сработает
-    //  const users = this.props;
     const mappedUsers = users.map(user => {
       return <User key={user.id} {...user} />;
     });

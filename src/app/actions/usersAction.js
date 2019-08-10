@@ -2,11 +2,13 @@ import axios from "axios";
 
 export function fetchUsers(id) {
   return function(dispatch) {
-    dispatch({ type: "FETCH_USERS" });
+    console.log(id);
 
     let path = id
-      ? `http://jsonplaceholder.typicode.com/users${id}`
+      ? `http://jsonplaceholder.typicode.com/users/${id}`
       : "http://jsonplaceholder.typicode.com/users";
+
+    dispatch({ type: "FETCH_USERS" });
 
     axios
       .get(path)

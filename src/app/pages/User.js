@@ -1,23 +1,25 @@
-import React, { Component } from "react";
-import UserProfile from "../components/User";
+import React from "react";
 import { connect } from "react-redux";
 import { fetchUsers } from "../actions/usersAction";
+import UserProfile from "../components/User";
 
 class User extends React.Component {
   render() {
-    const { user } = this.props;
-    return <div>{<UserProfile {...user} />}</div>;
+    const { users } = this.props;
+    return <div>{<UserProfile {...users} />}</div>;
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchUsers(this.props.params.userId));
-    console.log(this.props.params.userId);
+    debugger;
+    this.props.dispatch(fetchUsers(this.props.match.params.userId));
   }
 }
 
 function mapStateToProps(state) {
+  debugger;
   return {
     users: state.users.users
   };
 }
+
 export default connect(mapStateToProps)(User);
