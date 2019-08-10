@@ -1,19 +1,18 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  entry: "./src/app.js",
-  // entry: "./srcOne/app.js",
+  entry: './src/app.js',
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist")
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
   },
-  mode: "development",
+  mode: 'development',
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        use: "babel-loader"
       },
       {
         test: /\.css/,
@@ -23,6 +22,6 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, "dist")
+    contentBase: path.resolve(__dirname, 'dist')
   }
-};
+}
